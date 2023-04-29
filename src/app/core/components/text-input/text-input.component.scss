@@ -1,0 +1,44 @@
+@import '../../../../~variables.scss';
+
+
+.box {
+	width: 285px;
+	border-radius: 100px;
+	padding-left: 2px;
+	margin-left: 2px;
+
+	border: solid $color2;
+	border-width: 1px;
+	background-color: $background-color;
+}
+
+.form-group {
+	position: relative;
+	width: 250px;
+
+}
+
+.form-group input {
+	height: 40px;
+	padding: 0 15px;
+	font-size: 15px;
+	width: 100%;
+}
+
+.iconi {
+	position: absolute;
+	top: 10px;
+	cursor: pointer;
+}
+
+.icoT {
+	width: 20px;
+	height: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.clrWh{
+	color: white;
+}

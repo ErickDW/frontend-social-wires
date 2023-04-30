@@ -1,1 +1,16 @@
-<p>my-mesagges works!</p>
+<div class="containerHead">
+	<app-navbar></app-navbar>
+</div>
+<div class="mt containerBody">
+	<h1 class="txColor1 mbtl lg">My Messages</h1>
+	<div class="containerTxbt mbtl lg cnSelect">
+		<p class="txColor1">Date select</p>
+		<app-date-select></app-date-select>
+	</div>
+	<div class="paco containerGrup cnCard">
+		<app-card-message
+			[detal]="datax"
+			*ngFor="let datax of detal">
+		</app-card-message>
+	</div>
+</div>

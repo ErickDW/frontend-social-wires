@@ -1,15 +1,28 @@
 import { Component, OnInit } from '@angular/core';
-
+import 'jquery';
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+	selector: 'app-navbar',
+	templateUrl: './navbar.component.html',
+	styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
+	constructor() {
+		$(document).ready(function () {
+			$('.profile .icon_wrap').click(function () {
+				$(this).parent().toggleClass('active');
+				$('.notifications').removeClass('active');
+			});
 
-  constructor() { }
+			$('.notifications .icon_wrap').click(function () {
+				$(this).parent().toggleClass('active');
+				$('.profile').removeClass('active');
+			});
 
-  ngOnInit(): void {
-  }
+			$('.close').click(function () {
+				$('.popup').hide();
+			});
+		});
+	}
 
+	ngOnInit(): void {}
 }

@@ -1,1 +1,136 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~bootstrap-icons/font/bootstrap-icons.css';
+@import '~variables.scss';
+
+@font-face {
+	font-family: Mulish-VariableFont_wght;
+	src: url('./assets/fonts/Mulish-VariableFont_wght.ttf') format(truetype);
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	list-style: none;
+	box-sizing: border-box;
+	font-family: Mulish-VariableFont_wght;
+}
+
+body{
+	font-family: Mulish-VariableFont_wght;
+	background: $background-color;
+	color: $darkColor;
+}
+
+button{
+	border-radius: 100px;
+	padding: 16px 32px;
+	font-size: 18px;
+	cursor: pointer;
+	box-shadow: 0 0 4px #999;
+	outline: none;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 40px;
+}
+
+input{
+	border-radius: 100px;
+	border: none;
+	outline: none;
+	background-color: $background-color;
+	color: $color2;
+	&::placeholder{
+		color: $secoundColor;
+	}
+}
+
+.ripple{
+	background-position: center;
+	transition: background 0.8s;
+}
+
+.ripple:hover{
+	background-color: $ripple1;
+	background-image: radial-gradient(circle, transparent 1%, $ripple1 1%);
+	background-position: center;
+	background-size: 15000%;
+}
+
+.ripple:active{
+	transition: background 0s;
+	background-color: $ripple2;
+	background-size: 100%;
+}
+
+.rippleDark{
+	background-position: center;
+	transition: background 0.8s;
+}
+
+.rippleDark:hover{
+	background-color: $rippleDark1;
+	background-image: radial-gradient(circle, transparent 1%, $rippleDark1 1%);
+	background-position: center;
+	background-size: 15000%;
+}
+
+.rippleDark:active{
+	transition: background 0s;
+	background-color: $rippleDark2;
+	background-size: 100%;
+}
+
+.lg{
+	width: 320px;
+	margin: auto;
+}
+
+.dark{
+	border: solid $color2;
+	border-width: 1px;
+	background-color: $background-color;
+	color: $color1;
+}
+
+.default{
+	border: none;
+	background-color: $color2;
+	color: $darkColor;
+}
+
+.containerGrup{
+	display: grid;
+	gap: 10px;
+	grid-template-columns: repeat(auto-fill, minmax(365px,1fr));
+}
+
+.fechaCard{
+	font-size: x-small;
+	color: $secoundColor;
+}
+
+.txColor1{
+	color: $color1;
+}
+
+.txColor2{
+	color: $color2;
+}
+
+.mbtl {
+	margin-bottom: 35px;
+}
+
+.mbt {
+	margin-bottom: 20px;
+}
+
+.containerTxbt {
+	p {
+		margin-bottom: 8px;
+		font-size: 12px;
+	}
+}

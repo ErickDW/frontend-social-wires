@@ -9,10 +9,26 @@
 			<div class="containerTitle lg mbtl">
 				<h1>Welcome To Wires</h1>
 			</div>
-			<button class="dark rippleDark lg mbtl" routerLink="/signup">
-				Sign Up
+			<button class="dark rippleDark lg mbtl" routerLink="/signin">
+				Sign In
 			</button>
 			<form action="">
+				<div class="containerTxbt lg mbt">
+					<p class="txColor1">Nickname</p>
+					<app-text-input
+						changetype="text"
+						placeholder="Nickname"
+						[search]="false"
+					></app-text-input>
+				</div>
+				<div class="containerTxbt lg mbt">
+					<p class="txColor1">Name</p>
+					<app-text-input
+						changetype="text"
+						placeholder="Full name"
+						[search]="false"
+					></app-text-input>
+				</div>
 				<div class="containerTxbt lg mbt">
 					<p class="txColor1">Email Adress</p>
 					<app-text-input
@@ -30,12 +46,8 @@
 					></app-text-input>
 				</div>
 
-				<button class="default ripple lg mbtl">Sign In</button>
+				<button class="default ripple lg mbtl">Create</button>
 			</form>
-			<div class="containerCheck lg mbt">
-				<input type="checkbox" class="myCheckbox">
-				<p class="txColor1">Remember Me</p>
-			</div>
 		</div>
 		<div class="mbtl">
 			<app-footer></app-footer>

@@ -1,0 +1,349 @@
+@import 'src/~variables.scss';
+
+.wrapper {
+	width: 100%;
+	height: 100%;
+}
+
+.navbar {
+	background: $background-color;
+	width: 100%;
+	height: 60px;
+	padding: 0 25px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 15px;
+}
+
+.navbar .navbar_left .logo a {
+	font-size: 20px;
+}
+
+.navbar .navbar_right {
+	display: flex;
+}
+
+.navbar .navbar_right img {
+	width: 35px;
+}
+
+.navbar .navbar_right .icon_wrap {
+	cursor: pointer;
+}
+
+.navbar .navbar_right .notifications {
+	margin-right: 10px;
+}
+
+.iconSz {
+	font-size: 40px;
+	// background-color: $color1;
+}
+
+.navbar .navbar_right .profile,
+.navbar .navbar_right .notifications {
+	position: relative;
+}
+
+.navbar .profile .profile_dd,
+.notification_dd {
+	position: absolute;
+	top: 48px;
+	right: -15px;
+	user-select: none;
+	background: $color2;
+	border: 1px solid $color2;
+	width: 310px;
+	height: auto;
+	display: none;
+	border-radius: 3px;
+	box-shadow: 10px 10px 35px rgba(0, 0, 0, 0.125),
+		-10px -10px 35px rgba(0, 0, 0, 0.125);
+}
+
+.navbar .profile .profile_dd:before,
+.notification_dd:before {
+	content: "";
+	position: absolute;
+	top: -20px;
+	right: 15px;
+	border: 10px solid;
+	border-color: transparent transparent $color2 transparent;
+}
+
+.notification_dd li {
+	border-bottom: 1px solid $secoundColor;
+	padding: 10px 0px;
+	height: 115px;
+}
+
+.notification_dd li .notify_data {
+	margin: 0 15px;
+	width: 230px;
+}
+
+.notification_dd li .notify_data .title {
+	color: $darkColor;
+	font-weight: bold;
+}
+
+.notification_dd li .notify_data .sub_title {
+	font-size: 14px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-top: 5px;
+	width: 180px;
+}
+
+.titleTT {
+
+	border-bottom: none !important;
+	padding: 15px 0px !important;
+	font-weight: bold !important;
+	height: inherit !important;
+	margin-bottom: -10px;
+}
+
+.notification_dd li.show_all {
+	padding: 20px;
+	display: flex;
+	height: 60px;
+	justify-content: center;
+}
+
+.notification_dd li.show_all p {
+	font-weight: 800;
+	color: $darkColor;
+	cursor: pointer;
+}
+
+.notification_dd li.show_all p:hover {
+	text-decoration: underline;
+}
+
+.navbar .navbar_right .profile .icon_wrap {
+	display: flex;
+	align-items: center;
+}
+
+.navbar .navbar_right .profile .name {
+	display: inline-block;
+	margin: 0 10px;
+}
+
+.navbar .navbar_right .icon_wrap:hover,
+.navbar .navbar_right .profile.active .icon_wrap,
+.navbar .navbar_right .notifications.active .icon_wrap {
+	color: #3b80f9;
+}
+
+.navbar .profile .profile_dd {
+	width: 280px;
+}
+
+.navbar .profile .profile_dd:before {
+	rigth: 10px;
+}
+
+
+
+.navbar .profile .profile_dd ul li a {
+	display: flex;
+	padding: 15px 10px;
+	position: relative;
+	align-items: center;
+	font-weight: 600;
+}
+
+.profiletex {
+	font-weight: 700 !important;
+	font-size: x-large;
+}
+
+.navbar .profile .profile_dd ul li a .picon {
+	display: flex;
+}
+
+.navbar .profile .profile_dd ul li a:hover {
+	background: $color1;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	cursor: pointer;
+}
+
+.navbar .profile .profile_dd ul li.profile_li a:hover {
+	background: transparent;
+	cursor: default;
+}
+
+.navbar .profile.active .profile_dd,
+.navbar .notifications.active .notification_dd {
+	display: block;
+}
+
+.popup {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: all 0.2s ease;
+	display: none;
+}
+
+.popup .shadow {
+	width: 100%;
+	height: 100%;
+	background: #000;
+	opacity: 0.5;
+}
+
+.popup .inner_popup {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	height: auto;
+}
+
+.popup .notification_dd {
+	display: block;
+	position: static;
+	margin: 0 auto;
+	height: 357px;
+	overflow: auto;
+}
+
+.popup .notification_dd:before {
+	display: none;
+}
+
+.popup .notification_dd li.title {
+	font-weight: 700;
+	color: #3b80f9;
+	display: flex;
+	justify-content: center;
+	position: relative;
+}
+
+.popup .notification_dd li.title .close {
+	position: absolute;
+	top: 2px;
+	right: 10px;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+.popup .notification_dd li.title .close:hover {
+	opacity: 0.5;
+}
+
+
+svg {
+	stroke: white;
+	width: 24px;
+	height: 24px;
+}
+
+.op2 {
+	fill: white;
+	stroke: white;
+}
+
+.icoT {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&:hover {
+		background-color: $color1;
+
+		.op1 {
+			stroke: $background-color;
+		}
+
+		.op2 {
+			stroke: $color1;
+			fill: $background-color;
+		}
+	}
+}
+
+
+[data-after-text],
+[data-before-text] {
+	--badge-offset-x: calc(5px - var(--badge-size) / 3);
+	--badge-offset-y: calc(6px - var(--badge-size) / 3);
+	--badge-size: 12px;
+
+	--b: initial;
+	--bdrs: 0;
+	--d: inline-flex;
+	--fz: 0.5rem;
+	--fw: 700;
+	--h: auto;
+	--l: initial;
+	--m: 0.4rem;
+	--p: 0;
+	--pos: static;
+	--r: initial;
+	--t: initial;
+	--w: initial;
+
+	position: relative;
+}
+
+[data-after-text]:not([data-after-text=""])::after {
+	content: attr(data-after-text);
+}
+
+[data-after-text]:not([data-after-text=""])::after,
+[data-before-text]:not([data-before-text=""])::before {
+	align-items: center;
+	background: #FCFF6E;
+	border-radius: var(--bdrs);
+	bottom: var(--b);
+	box-sizing: border-box;
+	color: var(--c);
+	display: var(--d);
+	font-size: var(--fz);
+	font-weight: var(--fw);
+	height: var(--h);
+	justify-content: center;
+	left: var(--l);
+	padding: var(--p);
+	position: var(--pos);
+	right: var(--r);
+	text-decoration: none;
+	text-transform: var(--tt);
+	top: var(--t);
+	width: var(--w);
+}
+
+/* MODIFIERS */
+[data-after-type*="badge"]::after,
+[data-before-type*="badge"]::before {
+	--bdrs: var(--badge-size);
+	--bxsh: 0 0 0 2px rgba(255, 255, 255, 0.5);
+	--h: var(--badge-size);
+	--p: 0;
+	--pos: absolute;
+	--w: var(--badge-size);
+}
+
+[data-after-type*="badge"][data-after-type*="top"]::after,
+[data-before-type*="badge"][data-before-type*="top"]::before {
+	--m: 0;
+	--t: var(--badge-offset-y);
+}
+[data-after-type*="badge"][data-after-type*="left"]::after,
+[data-before-type*="badge"][data-before-type*="left"]::before {
+	--l: var(--badge-offset-x);
+	--m: 0;
+}

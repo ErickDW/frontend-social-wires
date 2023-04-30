@@ -1,8 +1,8 @@
 {
-  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "cli": {
-    "analytics": false
-  },
+	"$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+	"cli": {
+		"analytics": false
+	},
 	"version": 1,
 	"newProjectRoot": "projects",
 	"projects": {
@@ -26,9 +26,17 @@
 						"polyfills": "src/polyfills.ts",
 						"tsConfig": "tsconfig.app.json",
 						"aot": true,
-						"assets": ["src/favicon.ico", "src/assets"],
+						"assets": [
+							"src/favicon.ico",
+							"src/assets",
+							{
+								"glob": "bootstrap-icons.svg",
+								"input": "./node_modules/bootstrap-icons/",
+								"output": "/"
+							}
+						],
 						"styles": ["src/styles.scss", "src/responsive.scss"],
-						"scripts": []
+						"scripts": ["./node_modules/jquery/dist/jquery.min.js"]
 					},
 					"configurations": {
 						"production": {

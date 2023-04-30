@@ -1,0 +1,24 @@
+<div class="containerHead">
+	<app-navbar></app-navbar>
+</div>
+<div class="mt containerBody">
+	<h1 class="txColor1 mbtl lg">Create Message</h1>
+	<div class="containerTxbt mbt lg cnSelect">
+		<p class="txColor1">Title message</p>
+		<app-text-input
+			placeholder="Talk about me"
+			changetype="text"
+			[search]="false"
+		></app-text-input>
+	</div>
+	<div class="containerTxbt mbt lg cnSelect">
+		<p class="txColor1">Message</p>
+		<textarea name="" id="" cols="30" rows="10"></textarea>
+	</div>
+	<button class="default ripple">Share</button>
+	<div class="paco containerGrup cnCard">
+		<app-card-message [detal]="detal">
+		</app-card-message>
+	</div>
+</div>
+

@@ -4,7 +4,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 132vh;
+	height: 153vh;
 }
 
 
@@ -21,6 +21,13 @@
 .containerTitle {
 	h1 {
 		color: white;
+	}
+}
+
+.containerTxbt {
+	p {
+		margin-bottom: 8px;
+		font-size: 12px;
 	}
 }
 
@@ -54,7 +61,7 @@
 
 @media (max-width:400px) {
 	.containerGn1 {
-		height: 118vh;
+		height: 138vh;
 	}
 	.logo{
 		height: 270px;

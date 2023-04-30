@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 //! Falta logica del componente hijo para comunicarse con el padre
 //!FALTATERMINAR
 @Component({
@@ -7,11 +7,13 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./text-input.component.scss'],
 })
 export class TextInputComponent implements OnInit {
+
+	@Input() changetype: string = 'text';
+	@Input() placeholder: string = 'Pasword taco'
+	@Input() search : boolean = true;
+
 	open: boolean = false;
-	changetype: string = 'text';
-	placeholder: string = 'Pasword taco'
 	passw: boolean = false;
-	search : boolean = true;
 
 	constructor() {}
 

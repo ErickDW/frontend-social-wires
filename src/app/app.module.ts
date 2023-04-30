@@ -8,14 +8,14 @@ import { HttpClientModule } from "@angular/common/http";
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { SystemNotAvailableComponent } from './feature/system-not-available/system-not-available.component';
-import { LoginComponent } from './feature/login/login.component';
-import { SignInComponent } from './feature/sign-in/sign-in.component';
-import { HomeComponent } from './feature/home/home.component';
+import { CreateMessageComponent } from './feature/create-message/create-message.component';
 import { AllMesaggesComponent } from './feature/all-mesagges/all-mesagges.component';
 import { MyMesaggesComponent } from './feature/my-mesagges/my-mesagges.component';
+import { SignInComponent } from './feature/sign-in/sign-in.component';
+import { SignUpComponent } from './feature/sign-up/sign-up.component';
 
 @NgModule({
-	declarations: [AppComponent, SystemNotAvailableComponent, LoginComponent, SignInComponent, HomeComponent, AllMesaggesComponent, MyMesaggesComponent],
+	declarations: [AppComponent, SystemNotAvailableComponent,  CreateMessageComponent, AllMesaggesComponent, MyMesaggesComponent, SignInComponent, SignUpComponent],
 	imports: [
 		BrowserModule,
 		CoreModule,

@@ -4,7 +4,6 @@ import { RouterModule } from '@angular/router';
 
 import { CardMessageComponent } from './components/card-message/card-message.component';
 import { TextInputComponent } from './components/text-input/text-input.component';
-import { NotificationComponent } from './components/notification/notification.component';
 import { DateSelectComponent } from './components/date-select/date-select.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -14,7 +13,6 @@ import { CalendarSelectComponent } from './components/calendar-select/calendar-s
 	declarations: [
 		CardMessageComponent,
 		TextInputComponent,
-		NotificationComponent,
 		DateSelectComponent,
 		NavbarComponent,
 		FooterComponent,
@@ -24,7 +22,6 @@ import { CalendarSelectComponent } from './components/calendar-select/calendar-s
 	exports: [
 		CardMessageComponent,
 		TextInputComponent,
-		NotificationComponent,
 		DateSelectComponent,
 		NavbarComponent,
 		FooterComponent,

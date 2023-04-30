@@ -84,7 +84,8 @@ input{
 }
 
 .lg{
-	width: 200px;
+	width: 320px;
+	margin: auto;
 }
 
 .dark{
@@ -98,4 +99,23 @@ input{
 	border: none;
 	background-color: $color2;
 	color: $darkColor;
+}
+
+.containerGrup{
+	display: grid;
+	gap: 10px;
+	grid-template-columns: repeat(auto-fill, minmax(365px,1fr));
+}
+
+.fechaCard{
+	font-size: small;
+	color: $secoundColor;
+}
+
+.txColor1{
+	color: $color1;
+}
+
+.txColor2{
+	color: $color2;
 }

@@ -2,11 +2,12 @@
 
 
 .box {
-	width: 285px;
+	max-width: 320px;
+	width: 100%;
 	border-radius: 100px;
 	padding-left: 2px;
 	margin-left: 2px;
-
+	margin: auto;
 	border: solid $color2;
 	border-width: 1px;
 	background-color: $background-color;
@@ -14,8 +15,8 @@
 
 .form-group {
 	position: relative;
-	width: 250px;
-
+	max-width: 280px;
+	width: 100%;
 }
 
 .form-group input {
@@ -39,6 +40,6 @@
 	align-items: center;
 }
 
-.clrWh{
+.clrWh {
 	color: white;
 }

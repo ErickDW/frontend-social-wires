@@ -1,0 +1,21 @@
+@import 'src/~variables.scss';
+
+.card{
+	width: 360px;
+	background-color: $color2;
+	border-radius: 12px;
+	padding: 15px;
+	margin: auto;
+}
+.textCard{
+	margin-top: 5px;
+}
+.userCard{
+	font-weight: 900;
+}
+.footerCard{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 20px;
+}

@@ -108,7 +108,7 @@ input{
 }
 
 .fechaCard{
-	font-size: small;
+	font-size: x-small;
 	color: $secoundColor;
 }
 
@@ -118,4 +118,19 @@ input{
 
 .txColor2{
 	color: $color2;
+}
+
+.mbtl {
+	margin-bottom: 35px;
+}
+
+.mbt {
+	margin-bottom: 20px;
+}
+
+.containerTxbt {
+	p {
+		margin-bottom: 8px;
+		font-size: 12px;
+	}
 }

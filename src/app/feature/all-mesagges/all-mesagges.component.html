@@ -3,18 +3,19 @@
 </div>
 <div class="mt containerBody">
 	<h1 class="txColor1 mbtl lg">All Messages</h1>
-	<div class="containerTxbt mbt lg cnSelect">
-		<p class="txColor1">What search?</p>
-		<app-text-input placeholder="Search" changetype="search"></app-text-input>
+	<div class="containerSearch">
+		<div class="containerTxbt mbt lg sear">
+			<p class="txColor1">What search?</p>
+			<app-text-input placeholder="Search" changetype="search"></app-text-input>
+		</div>
+		<div class="containerTxbt mbtl lg cnSelect">
+			<p class="txColor1">Date select</p>
+			<app-date-select></app-date-select>
+		</div>
 	</div>
-	<div class="containerTxbt mbtl lg cnSelect">
-		<p class="txColor1">Date select</p>
-		<app-date-select></app-date-select>
-	</div>
-	<div class="paco containerGrup cnCard">
-		<app-card-message
-			[detal]="datax"
-			*ngFor="let datax of detal">
+
+	<div class="containerGrup cnCard">
+		<app-card-message [detal]="datax" *ngFor="let datax of detal">
 		</app-card-message>
 	</div>
 </div>

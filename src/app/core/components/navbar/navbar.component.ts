@@ -6,20 +6,13 @@ import 'jquery';
 	styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
+	noty: boolean = false;
+
 	constructor() {
 		$(document).ready(function () {
 			$('.profile .icon_wrap').click(function () {
 				$(this).parent().toggleClass('active');
 				$('.notifications').removeClass('active');
-			});
-
-			$('.notifications .icon_wrap').click(function () {
-				$(this).parent().toggleClass('active');
-				$('.profile').removeClass('active');
-			});
-
-			$('.close').click(function () {
-				$('.popup').hide();
 			});
 		});
 	}

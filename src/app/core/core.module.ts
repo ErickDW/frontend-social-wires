@@ -8,6 +8,7 @@ import { DateSelectComponent } from './components/date-select/date-select.compon
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CalendarSelectComponent } from './components/calendar-select/calendar-select.component';
+import { NotifyComponent } from './components/notify/notify.component';
 
 @NgModule({
 	declarations: [
@@ -17,6 +18,7 @@ import { CalendarSelectComponent } from './components/calendar-select/calendar-s
 		NavbarComponent,
 		FooterComponent,
 		CalendarSelectComponent,
+  NotifyComponent,
 	],
 	imports: [CommonModule, RouterModule],
 	exports: [

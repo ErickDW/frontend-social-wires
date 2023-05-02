@@ -10,4 +10,27 @@
 .containerBody{
 	position: relative;
 	z-index: 3;
+	h1{
+		text-align: center;
+	}
+}
+
+.cnSelect{
+	p{
+		text-align: center;
+	}
+}
+
+@media (max-width:755px) {
+	.cnSelect{
+		p{
+			text-align: inherit;
+		}
+	}
+
+	.containerBody{
+		h1{
+			text-align: inherit;
+		}
+	}
 }

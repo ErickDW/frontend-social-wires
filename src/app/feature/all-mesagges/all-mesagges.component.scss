@@ -1,13 +1,58 @@
-.mt{
+.mt {
 	margin-top: 35px;
 }
 
-.containerHead{
+.containerHead {
 	position: relative;
 	z-index: 5;
 }
 
-.containerBody{
+.containerBody {
 	position: relative;
 	z-index: 3;
+
+	h1 {
+		text-align: center;
+	}
+}
+
+.containerSearch {
+	display: flex;
+	gap: 50px;
+	margin: auto;
+	width: 690px;
+	align-items: center;
+	margin-bottom: 50px;
+	.lg{
+		margin: initial;
+	}
+	.sear{
+		height: 180px;
+	}
+}
+
+@media (max-width:755px) {
+	.containerBody {
+		h1 {
+			text-align: initial;
+		}
+	}
+
+	.containerSearch {
+		display: block;
+		gap: inherit;
+		margin: auto inherit;
+		width: 320px;
+		align-items: center;
+		margin-bottom: 15px;
+		.lg{
+			margin: auto;
+		}
+		.sear{
+			height: initial;
+		}
+		.mbt{
+			margin-bottom: 20px;
+		}
+	}
 }

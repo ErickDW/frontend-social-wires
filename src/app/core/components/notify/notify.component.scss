@@ -1,35 +1,14 @@
 @import 'src/~variables.scss';
 
-.wrapper {
-	width: 100%;
-	height: 100%;
-}
 
-.navbar {
-	background: $background-color;
-	width: 100%;
-	height: 60px;
-	padding: 0 25px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin-top: 15px;
-}
 
-.navbar .navbar_left .logo a {
-	font-size: 20px;
-}
 
-.navbar .navbar_right {
-	display: flex;
-}
-
-.navbar .navbar_right img {
-	width: 35px;
-}
-
-.navbar .navbar_right .icon_wrap {
+.icon_wrap {
 	cursor: pointer;
+}
+
+.notifications {
+	margin-right: 10px;
 }
 
 .iconSz {
@@ -37,11 +16,11 @@
 	// background-color: $color1;
 }
 
-.navbar .navbar_right .profile{
+.notifications {
 	position: relative;
 }
 
-.navbar .profile .profile_dd{
+.notification_dd {
 	position: absolute;
 	top: 48px;
 	right: -15px;
@@ -56,7 +35,7 @@
 		-10px -10px 35px rgba(0, 0, 0, 0.125);
 }
 
-.navbar .profile .profile_dd:before{
+.notification_dd:before {
 	content: "";
 	position: absolute;
 	top: -20px;
@@ -65,7 +44,33 @@
 	border-color: transparent transparent $color2 transparent;
 }
 
+.notification_dd li {
+	border-bottom: 1px solid $secoundColor;
+	padding: 10px 0px;
+	height: 115px;
+}
+
+.notification_dd li .notify_data {
+	margin: 0 15px;
+	width: 230px;
+}
+
+.notification_dd li .notify_data .title {
+	color: $darkColor;
+	font-weight: bold;
+}
+
+.notification_dd li .notify_data .sub_title {
+	font-size: 14px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-top: 5px;
+	width: 180px;
+}
+
 .titleTT {
+
 	border-bottom: none !important;
 	padding: 15px 0px !important;
 	font-weight: bold !important;
@@ -73,37 +78,27 @@
 	margin-bottom: -10px;
 }
 
-.navbar .navbar_right .profile .icon_wrap {
+.notification_dd li.show_all {
+	padding: 20px;
 	display: flex;
-	align-items: center;
+	height: 60px;
+	justify-content: center;
 }
 
-.navbar .navbar_right .profile .name {
-	display: inline-block;
-	margin: 0 10px;
-}
-
-.navbar .navbar_right .icon_wrap:hover,
-.navbar .navbar_right .profile.active .icon_wrap{
+.notification_dd li.show_all p {
+	font-weight: 800;
 	color: $darkColor;
+	cursor: pointer;
 }
 
-.navbar .profile .profile_dd {
-	width: 280px;
-}
-
-.navbar .profile .profile_dd:before {
-	rigth: 10px;
+.notification_dd li.show_all p:hover {
+	text-decoration: underline;
 }
 
 
-
-.navbar .profile .profile_dd ul li a {
-	display: flex;
-	padding: 15px 10px;
-	position: relative;
-	align-items: center;
-	font-weight: 600;
+.icon_wrap:hover,
+.notifications.active .icon_wrap {
+	color: $darkColor;
 }
 
 .profiletex {
@@ -111,23 +106,7 @@
 	font-size: x-large;
 }
 
-.navbar .profile .profile_dd ul li a .picon {
-	display: flex;
-}
-
-.navbar .profile .profile_dd ul li a:hover {
-	background: $color1;
-	border-bottom-left-radius: 0;
-	border-bottom-right-radius: 0;
-	cursor: pointer;
-}
-
-.navbar .profile .profile_dd ul li.profile_li a:hover {
-	background: transparent;
-	cursor: default;
-}
-
-.navbar .profile.active .profile_dd{
+.notifications.active .notification_dd {
 	display: block;
 }
 

@@ -47,6 +47,18 @@ input{
 	}
 }
 
+textarea{
+	border: solid $color2;
+	border-radius: 30px;
+	border-width: 1px;
+	background-color: $background-color;
+	color: $color2;
+	font-size: 0.7rem;
+	padding: 15px;
+	resize: none;
+	outline: none;
+}
+
 .ripple{
 	background-position: center;
 	transition: background 0.8s;
@@ -132,5 +144,27 @@ input{
 	p {
 		margin-bottom: 8px;
 		font-size: 12px;
+	}
+}
+
+.cnSelect{
+	height: 190px;
+	position: relative;
+	z-index: 2;
+}
+
+.cnCard{
+	position: relative;
+	z-index: 0;
+	margin-top: -130px;
+}
+
+@media (max-width:755px) {
+	.cnSelect{
+		height: initial;
+	}
+
+	.cnCard{
+		margin-top: initial;
 	}
 }

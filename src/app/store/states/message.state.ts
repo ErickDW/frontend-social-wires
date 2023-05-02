@@ -6,8 +6,8 @@ export interface IMessage {
 }
 
 export const defaultMsg: IMessage = {
-	title: 'Soy un titulo',
-	message: 'Soy un texto o un mensaje',
+	title: 'Title',
+	message: '...',
 	fecha: '10:25 am 20/11/23',
 	user: 'Nombre Usuario',
 };

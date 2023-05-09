@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Subject } from 'rxjs';
 //! Falta logica del componente hijo para comunicarse con el padre
 //!FALTATERMINAR
@@ -9,9 +10,13 @@ import { Subject } from 'rxjs';
 })
 export class TextInputComponent implements OnInit {
 	@Input() changetype: string = 'text';
+	@Input() name: string = '';
 	@Input() placeholder: string = 'Pasword taco';
 	@Input() search: boolean = true;
-	@Output() text$ =  new EventEmitter<any>();
+	@Output() text$ = new EventEmitter<any>();
+
+
+	camp!: FormGroup;
 
 	open: boolean = false;
 	passw: boolean = false;
@@ -40,4 +45,5 @@ export class TextInputComponent implements OnInit {
 	text(event: Event): void {
 		this.text$.emit(event);
 	}
+
 }

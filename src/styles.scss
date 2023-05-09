@@ -168,3 +168,10 @@ textarea{
 		margin-top: initial;
 	}
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 30px $background-color inset;
+	 -webkit-text-fill-color: $color1;
+}

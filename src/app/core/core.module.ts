@@ -9,6 +9,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CalendarSelectComponent } from './components/calendar-select/calendar-select.component';
 import { NotifyComponent } from './components/notify/notify.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
 	declarations: [
@@ -20,7 +21,7 @@ import { NotifyComponent } from './components/notify/notify.component';
 		CalendarSelectComponent,
   NotifyComponent,
 	],
-	imports: [CommonModule, RouterModule],
+	imports: [CommonModule, RouterModule, ReactiveFormsModule,],
 	exports: [
 		CardMessageComponent,
 		TextInputComponent,

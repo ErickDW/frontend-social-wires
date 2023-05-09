@@ -1,36 +1,11 @@
-<!-- ! Falta logica del ngFor -->
-<!-- !FALTATERMINAR -->
-
-<div class="select-box">
-	<div class="options-container">
-		<div class="option">
-			<input type="radio" class="radio" id="automobiles" name="category" />
-			<label for="automobiles">10-20-22</label>
+<div class="select-box" (click)="query()">
+	<div class="options-container" >
+		<div class="option index" (click)="selection('false')">
+			<label>Date select</label>
 		</div>
 
-		<div class="option">
-			<input type="radio" class="radio" id="film" name="category" />
-			<label for="film">10-20-23</label>
-		</div>
-
-		<div class="option">
-			<input type="radio" class="radio" id="science" name="category" />
-			<label for="science">10-20-25</label>
-		</div>
-
-		<div class="option">
-			<input type="radio" class="radio" id="art" name="category" />
-			<label for="art">10-21-25</label>
-		</div>
-
-		<div class="option">
-			<input type="radio" class="radio" id="music" name="category" />
-			<label for="music">10-30-25</label>
-		</div>
-
-		<div class="option">
-			<input type="radio" class="radio" id="travel" name="category" />
-			<label for="travel">12-03-26</label>
+		<div class="option" *ngFor="let day of days" (click)="selection(day)">
+			<label >{{day}}</label>
 		</div>
 	</div>
 

@@ -6,11 +6,11 @@
 	<div class="containerSearch">
 		<div class="containerTxbt mbt lg sear">
 			<p class="txColor1">What search?</p>
-			<app-text-input placeholder="Search" changetype="search"></app-text-input>
+			<app-text-input placeholder="Search" changetype="search" (text$)="search($event)"></app-text-input>
 		</div>
 		<div class="containerTxbt mbtl lg cnSelect">
 			<p class="txColor1">Date select</p>
-			<app-date-select></app-date-select>
+			<app-date-select [days]="days" (date$)="searchDate($event)"></app-date-select>
 		</div>
 	</div>
 

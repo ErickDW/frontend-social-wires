@@ -8,19 +8,32 @@ import { CreateMessageComponent } from './feature/create-message/create-message.
 import { AllMesaggesComponent } from './feature/all-mesagges/all-mesagges.component';
 import { MyMesaggesComponent } from './feature/my-mesagges/my-mesagges.component';
 import { SystemNotAvailableComponent } from './feature/system-not-available/system-not-available.component';
+import { LoginGuard } from './guard/login.guard';
+import { UserCheckGuard } from './guard/user-check.guard';
 
 const routes: Routes = [
+	{ path: 'signin', component: SignInComponent, canActivate: [UserCheckGuard]},
+	{ path: 'signup', component: SignUpComponent, canActivate: [UserCheckGuard]},
 
-	{ path: "signin", component: SignInComponent},
-	{ path: "signup", component: SignUpComponent },
+	{ path: '', redirectTo: '/signin', pathMatch: 'full' },
+	{
+		path: 'allmessages',
+		component: AllMesaggesComponent,
+		canActivate: [LoginGuard],
+	},
+	{
+		path: 'message',
+		component: CreateMessageComponent,
+		canActivate: [LoginGuard],
+	},
+	{
+		path: 'mymessages',
+		component: MyMesaggesComponent,
+		canActivate: [LoginGuard],
+	},
 
-	{ path: "", redirectTo: "/allmessages", pathMatch: "full"},
-	{ path: "allmessages", component: AllMesaggesComponent},
-	{ path: "message", component: CreateMessageComponent},
-	{ path: "mymessages", component: MyMesaggesComponent},
-
-	{ path: "error", component: SystemNotAvailableComponent },
-	{ path: "**", redirectTo: "/error" }
+	{ path: 'error', component: SystemNotAvailableComponent },
+	{ path: '**', redirectTo: '/error' },
 ];
 
 @NgModule({

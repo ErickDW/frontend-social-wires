@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 import { CallsBack } from 'src/app/utils/calls-back';
 import { IUsersession } from 'src/app/store/states/user-session.state';
 import { IError } from 'src/app/store/states/is-error.state';
+import { Utils } from 'src/app/utils/utils';
 @Component({
 	selector: 'app-sign-in',
 	templateUrl: './sign-in.component.html',
@@ -31,11 +32,8 @@ export class SignInComponent implements OnInit {
 	ngOnInit(): void {}
 
 	inputData(event: Event) {
-		const element = event.currentTarget as HTMLInputElement;
-		this.logInData = {
-			...this.logInData,
-			[element.title]: element.value,
-		};
+		const dataStruc = new Utils().inputData(event, this.logInData) as ILogIn;
+		this.logInData = dataStruc;
 	}
 
 	onSubmit(event: Event): void {

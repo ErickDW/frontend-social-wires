@@ -1,7 +1,7 @@
 export interface IFilters {
-	nick: string;
-	title: string;
-	day: string;
+	nick?: string;
+	title?: string;
+	day?: string;
 }
 
 export interface IJwtInfo {
@@ -17,4 +17,12 @@ export interface ILogIn {
 export interface IUserCheck {
 	message: string;
 	jwt: string;
+}
+
+export interface IRegister {
+	email: string;
+	password?: string;
+	role: string;
+	userName: string;
+	nickName: string;
 }

@@ -5,17 +5,33 @@
 	<h1 class="txColor1 mbtl lg">Create Message</h1>
 	<div class="containerMsg">
 		<div class="containerCreateMsg">
-			<div class="containerTxbt mbt lg">
-				<p class="txColor1">Title message</p>
-				<app-text-input placeholder="Talk about me" changetype="text" [search]="false" (text$)="title($event)"></app-text-input>
-			</div>
-			<div class="containerTxbt mbt lg">
-				<p class="txColor1">Message</p>
-				<textarea name="" id="" cols="47" rows="7" [placeholder]="placeMsg" maxlength="700" (input)="msg($event)"></textarea>
-			</div>
-			<div class="containerButtonShare lg mbtl">
-				<button class="default ripple">Share</button>
-			</div>
+			<form (submit)="onSubmit($event)">
+				<div class="containerTxbt mbt lg">
+					<p class="txColor1">Title message</p>
+					<app-text-input
+						placeholder="Talk about me"
+						changetype="text"
+						[search]="false"
+						name="title"
+						(text$)="inputData($event)"
+					></app-text-input>
+				</div>
+				<div class=" containerTxbt mbt lg">
+						<p class="txColor1">Message</p>
+						<textarea
+							id=""
+							cols="47"
+							rows="7"
+							[placeholder]="placeMsg"
+							maxlength="700"
+							(input)="inputData($event)"
+							title="message"
+						></textarea>
+				</div>
+				<div class="containerButtonShare lg mbtl">
+					<button class="default ripple">Share</button>
+				</div>
+			</form>
 		</div>
 
 		<div class="msg">

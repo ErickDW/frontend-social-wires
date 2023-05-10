@@ -12,13 +12,15 @@
 			<button class="dark rippleDark lg mbtl" routerLink="/signin">
 				Sign In
 			</button>
-			<form action="">
+			<form (submit)="onSubmit($event)">
 				<div class="containerTxbt lg mbt">
 					<p class="txColor1">Nickname</p>
 					<app-text-input
 						changetype="text"
 						placeholder="Nickname"
 						[search]="false"
+						(text$)="inputData($event)"
+						name="nickName"
 					></app-text-input>
 				</div>
 				<div class="containerTxbt lg mbt">
@@ -27,6 +29,8 @@
 						changetype="text"
 						placeholder="Full name"
 						[search]="false"
+						(text$)="inputData($event)"
+						name="userName"
 					></app-text-input>
 				</div>
 				<div class="containerTxbt lg mbt">
@@ -35,6 +39,8 @@
 						changetype="email"
 						placeholder="Example@gmail.com"
 						[search]="false"
+						(text$)="inputData($event)"
+						name="email"
 					></app-text-input>
 				</div>
 				<div class="containerTxbt lg mbtl">
@@ -43,6 +49,8 @@
 						changetype="password"
 						placeholder="Password"
 						[search]="false"
+						(text$)="inputData($event)"
+						name="password"
 					></app-text-input>
 				</div>
 

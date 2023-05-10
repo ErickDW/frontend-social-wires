@@ -5,6 +5,11 @@ export interface IMessage {
 	nick: string;
 }
 
+export interface IMessageRes {
+	not: string;
+	dat: IMessage;
+}
+
 export const defaultMsg: IMessage = {
 	title: '',
 	message: '',

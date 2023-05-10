@@ -43,7 +43,6 @@ export class LoginGuard implements CanActivate {
 				const r: IError = response;
 				if (r.isError || response.nick === '') {
 					const jwtCookie = sessionStorage.getItem('jwt');
-					console.log(jwtCookie);
 					if (jwtCookie) {
 						this.backService.logInCheck(jwtCookie).subscribe(
 							(info: IJwtInfo) => {

@@ -10,6 +10,7 @@ import {
 	IFilters,
 	IJwtInfo,
 	ILogIn,
+	IRegister,
 	IUserCheck,
 } from '../interfaces/filters.interface';
 import {
@@ -18,6 +19,7 @@ import {
 } from '../store/actions/euser-session.action';
 import { IUsersession } from '../store/states/user-session.state';
 import { Observable } from 'rxjs';
+import { LoadAllMyMessagesFailed, LoadAllMyMessagesSuccess } from '../store/actions/eall-my-messages.action';
 
 export class CallsBack {
 	constructor(
@@ -78,6 +80,57 @@ export class CallsBack {
 						messageError: e,
 						isError: true,
 						moreInfo: 'Server error, please try again later',
+					})
+				);
+			}
+		);
+	}
+
+
+	callBackRegister(res: IRegister) {
+		this.backService.register(res).subscribe(
+			(register)=>{
+				this.callBackLogIn({email: register.email, password: res.password});
+			},
+			(e) => {
+				this._store.dispatch(
+					new LoadUserSessionFailed({
+						messageError: e,
+						isError: true,
+						moreInfo: 'Server error, please try again later',
+					})
+				);
+			}
+		);
+	}
+
+	callBackCreateMessage(msg: IMessage) {
+		this.backService.createMessage(msg).subscribe(
+			(register)=>{
+				if(register.not === 'Message create'){
+					this.callBackAllMesaagesFilter();
+				alert('Mensaje enviado con exito')
+
+				}
+			},
+			(e) => {
+				alert('Error al crar el mensage intente denuevo')
+			}
+		);
+	}
+
+	callBackAllMyMesaagesDateFilter(data?: IFilters) {
+		this.backService.filterCharacterAllMessages(data).subscribe(
+			(res: IMessage[]) => {
+				if (res) {
+					this._store.dispatch(new LoadAllMyMessagesSuccess(res));
+				}
+			},
+			(e) => {
+				this._store.dispatch(
+					new LoadAllMyMessagesFailed({
+						messageError: e,
+						isError: true,
 					})
 				);
 			}

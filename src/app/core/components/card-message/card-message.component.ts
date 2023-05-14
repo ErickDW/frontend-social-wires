@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+
 import { IMessage, defaultMsg } from 'src/app/store/states/message.state';
 import { Utils } from 'src/app/utils/utils';
 @Component({

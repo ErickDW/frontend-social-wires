@@ -12,27 +12,17 @@
 			<li class="titleTT">
 				<div class="notify_data">
 					<div class="title">
-							recent posts
+							{{titlePost}}
 					</div>
 				</div>
 			</li>
-			<li class="starbucks success">
+			<li *ngFor="let resent of post">
 				<div class="notify_data">
 					<div class="title">
-						Lorem, ipsum dolor. aslkdfjkajsdfj lkasjdfklja lksjdfklakdsjf lkajsdf?
+						{{resent.title}}
 					</div>
 					<div class="sub_title">
-						Lorem ipsum dolor sit amet consectetur.
-					</div>
-				</div>
-			</li>
-			<li class="baskin_robbins failed">
-				<div class="notify_data">
-					<div class="title">
-						Lorem, ipsum dolor.
-					</div>
-					<div class="sub_title">
-						Lorem ipsum dolor sit amet consectetur.
+						{{resent.message}}
 					</div>
 				</div>
 			</li>
@@ -57,27 +47,17 @@
 			<li class="titleTT">
 				<div class="notify_data">
 					<div class="title">
-							recent posts
+							{{titlePost}}
 					</div>
 				</div>
 			</li>
-			<li class="starbucks success">
+			<li *ngFor="let resent of post">
 				<div class="notify_data">
 					<div class="title">
-						Lorem, ipsum dolor. aslkdfjkajsdfj lkasjdfklja lksjdfklakdsjf lkajsdf?
+						{{resent.title}}
 					</div>
 					<div class="sub_title">
-						Lorem ipsum dolor sit amet consectetur.
-					</div>
-				</div>
-			</li>
-			<li class="baskin_robbins failed">
-				<div class="notify_data">
-					<div class="title">
-						Lorem, ipsum dolor.
-					</div>
-					<div class="sub_title">
-						Lorem ipsum dolor sit amet consectetur.
+						{{resent.message}}
 					</div>
 				</div>
 			</li>

@@ -10,6 +10,12 @@ export interface IMessageRes {
 	dat: IMessage;
 }
 
+export interface INewMessages {
+	newMessages: boolean;
+	dataMessages?: IMessage[];
+	change?: number;
+}
+
 export const defaultMsg: IMessage = {
 	title: '',
 	message: '',
@@ -55,3 +61,7 @@ export const defaultMsgArray: IMessage[] = [
 		nick: 'Nombre Usuario',
 	},
 ];
+
+export const defaultNewMsg: INewMessages = {
+	newMessages: false,
+};

@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { IMessage, defaultMsgArray } from 'src/app/store/states/message.state';
-import { BackService } from '../../services/back.service';
 import { Store } from '@ngrx/store';
-import { IAppState } from '../../store/states/app.state';
 import { Router } from '@angular/router';
-import { CallsBack } from 'src/app/utils/calls-back';
+
+import { IAppState } from '../../store/states/app.state';
 import { IError } from 'src/app/store/states/is-error.state';
 import { IFilters } from 'src/app/interfaces/filters.interface';
+import { IMessage, defaultMsgArray } from 'src/app/store/states/message.state';
+import { LoadCurrentAllMessagesSuccess } from 'src/app/store/actions/ecurrent-all-messages.action';
+import { CallsBack } from 'src/app/utils/calls-back';
 import { Utils } from 'src/app/utils/utils';
-
+import { BackService } from '../../services/back.service';
 @Component({
 	selector: 'app-all-mesagges',
 
@@ -38,6 +39,10 @@ export class AllMesaggesComponent implements OnInit {
 		this.getDaysInfo();
 		this.callsBack.callBackAllMesaagesFilter();
 		this.getAllMessagesStore();
+	}
+
+	ngOnDestroy(): void {
+		this.callsBack.callBackAllMesaagesFilter();
 	}
 
 	search(event: Event) {
@@ -72,6 +77,9 @@ export class AllMesaggesComponent implements OnInit {
 		this.backService
 			.filterCharacterAllMessages()
 			.subscribe((res: IMessage[]) => {
+				this._store.dispatch(
+					new LoadCurrentAllMessagesSuccess(res)
+				);
 				res.forEach((val) => {
 					const day = new Utils().changeDateFormat(val.date);
 					set.add(day);

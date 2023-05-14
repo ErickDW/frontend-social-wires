@@ -7,9 +7,7 @@ import { TextInputComponent } from './components/text-input/text-input.component
 import { DateSelectComponent } from './components/date-select/date-select.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { CalendarSelectComponent } from './components/calendar-select/calendar-select.component';
 import { NotifyComponent } from './components/notify/notify.component';
-import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
 	declarations: [
@@ -18,10 +16,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 		DateSelectComponent,
 		NavbarComponent,
 		FooterComponent,
-		CalendarSelectComponent,
-  NotifyComponent,
+		NotifyComponent,
 	],
-	imports: [CommonModule, RouterModule, ReactiveFormsModule,],
+	imports: [CommonModule, RouterModule],
 	exports: [
 		CardMessageComponent,
 		TextInputComponent,

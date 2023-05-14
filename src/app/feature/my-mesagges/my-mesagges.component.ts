@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { IMessage, defaultMsgArray } from 'src/app/store/states/message.state';
-import { Store } from '@ngrx/store';
-import { IAppState } from '../../store/states/app.state';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+
+import { IUsersession } from 'src/app/store/states/user-session.state';
+import { IFilters } from 'src/app/interfaces/filters.interface';
+import { IAppState } from '../../store/states/app.state';
+import { IError } from 'src/app/store/states/is-error.state';
+import { IMessage, defaultMsgArray } from 'src/app/store/states/message.state';
 import { BackService } from '../../services/back.service';
 import { CallsBack } from 'src/app/utils/calls-back';
-import { IFilters } from 'src/app/interfaces/filters.interface';
-import { IUsersession } from 'src/app/store/states/user-session.state';
 import { Utils } from 'src/app/utils/utils';
-import { IError } from 'src/app/store/states/is-error.state';
 
 @Component({
 	selector: 'app-my-mesagges',

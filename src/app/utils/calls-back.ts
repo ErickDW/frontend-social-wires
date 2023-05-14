@@ -1,10 +1,8 @@
-import { BackService } from '../services/back.service';
-import {
-	LoadAllMessagesFailed,
-	LoadAllMessagesSuccess,
-} from '../store/actions/eall-messages.action';
-import { IMessage } from '../store/states/message.state';
 import { Store } from '@ngrx/store';
+
+import { BackService } from '../services/back.service';
+import { IMessage } from '../store/states/message.state';
+import { IError } from '../store/states/is-error.state';
 import { IAppState } from '../store/states/app.state';
 import {
 	IFilters,
@@ -18,8 +16,18 @@ import {
 	LoadUserSessionFailed,
 } from '../store/actions/euser-session.action';
 import { IUsersession } from '../store/states/user-session.state';
-import { Observable } from 'rxjs';
-import { LoadAllMyMessagesFailed, LoadAllMyMessagesSuccess } from '../store/actions/eall-my-messages.action';
+import {
+	LoadAllMyMessagesFailed,
+	LoadAllMyMessagesSuccess,
+} from '../store/actions/eall-my-messages.action';
+import {
+	LoadNewMessagesFalse,
+	LoadNewMessagesTrue,
+} from '../store/actions/enew-messages.action';
+import {
+	LoadAllMessagesFailed,
+	LoadAllMessagesSuccess,
+} from '../store/actions/eall-messages.action';
 
 export class CallsBack {
 	constructor(
@@ -86,11 +94,13 @@ export class CallsBack {
 		);
 	}
 
-
 	callBackRegister(res: IRegister) {
 		this.backService.register(res).subscribe(
-			(register)=>{
-				this.callBackLogIn({email: register.email, password: res.password});
+			(register) => {
+				this.callBackLogIn({
+					email: register.email,
+					password: res.password,
+				});
 			},
 			(e) => {
 				this._store.dispatch(
@@ -106,15 +116,14 @@ export class CallsBack {
 
 	callBackCreateMessage(msg: IMessage) {
 		this.backService.createMessage(msg).subscribe(
-			(register)=>{
-				if(register.not === 'Message create'){
+			(register) => {
+				if (register.not === 'Message create') {
 					this.callBackAllMesaagesFilter();
-				alert('Mensaje enviado con exito')
-
+					alert('Message sent succesfully');
 				}
 			},
 			(e) => {
-				alert('Error al crar el mensage intente denuevo')
+				alert('Error creating message, try again');
 			}
 		);
 	}
@@ -135,5 +144,45 @@ export class CallsBack {
 				);
 			}
 		);
+	}
+
+	callBackAllNewMessages() {
+		this._store
+			.select((state) => state.currentAllMessages)
+			.subscribe((response: IMessage[] | any) => {
+				const r: IError = response;
+				if (r.isError) {
+					return;
+				} else {
+					if (response) {
+						this.compareMessages(response);
+					}
+				}
+			});
+	}
+
+	compareMessages(messages: IMessage[]) {
+		this.backService
+			.filterCharacterAllMessages()
+			.subscribe((res: IMessage[]) => {
+				if (res) {
+					if (res.length > messages.length) {
+						const change = res.length - messages.length;
+						this._store.dispatch(
+							new LoadNewMessagesTrue({
+								newMessages: true,
+								dataMessages: res,
+								change: change,
+							})
+						);
+					} else {
+						this._store.dispatch(
+							new LoadNewMessagesFalse({
+								newMessages: false,
+							})
+						);
+					}
+				}
+			});
 	}
 }

@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { BackService } from '../../services/back.service';
-import { ILogIn, IRegister } from 'src/app/interfaces/filters.interface';
-import { Store } from '@ngrx/store';
-import { IAppState } from '../../store/states/app.state';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
 
-import { CallsBack } from 'src/app/utils/calls-back';
+import { IAppState } from '../../store/states/app.state';
+import { IRegister } from 'src/app/interfaces/filters.interface';
 import { IUsersession } from 'src/app/store/states/user-session.state';
 import { IError } from 'src/app/store/states/is-error.state';
+import { BackService } from '../../services/back.service';
+import { CallsBack } from 'src/app/utils/calls-back';
 import { Utils } from 'src/app/utils/utils';
 @Component({
 	selector: 'app-sign-up',
@@ -42,7 +42,7 @@ export class SignUpComponent implements OnInit {
 	onSubmit(event: Event): void {
 		event.preventDefault();
 		if (this.verifyData()) {
-			alert('Debes llenar los campos de registro');
+			alert('You must fill in the registration fields');
 			return;
 		}
 		this.callsBack.callBackRegister(this.registerData);

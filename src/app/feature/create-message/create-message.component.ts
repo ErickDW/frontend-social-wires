@@ -1,16 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Subject } from 'rxjs';
-import { IMessage, defaultMsg } from 'src/app/store/states/message.state';
-import { BackService } from '../../services/back.service';
-import { ILogIn } from 'src/app/interfaces/filters.interface';
 import { Store } from '@ngrx/store';
-import { IAppState } from '../../store/states/app.state';
 import { Router } from '@angular/router';
 
+import { BackService } from '../../services/back.service';
+import { Utils } from 'src/app/utils/utils';
 import { CallsBack } from 'src/app/utils/calls-back';
 import { IUsersession } from 'src/app/store/states/user-session.state';
-import { IError } from 'src/app/store/states/is-error.state';
-import { Utils } from 'src/app/utils/utils';
+import { IAppState } from '../../store/states/app.state';
+import { IMessage } from 'src/app/store/states/message.state';
 @Component({
 	selector: 'app-create-message',
 	templateUrl: './create-message.component.html',
@@ -55,7 +52,7 @@ export class CreateMessageComponent implements OnInit {
 	onSubmit(event: Event): void {
 		event.preventDefault();
 		if(this.detal.title === '...' || this.detal.message === '...'){
-			alert('tu mensage debe tener titulo y contenido');
+			alert('Your message must have a title and content');
 			return
 		}else{
 			this.callsBack.callBackCreateMessage(this.detal);

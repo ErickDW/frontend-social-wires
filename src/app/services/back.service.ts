@@ -16,8 +16,8 @@ import { Observable } from 'rxjs';
 	providedIn: 'root',
 })
 export class BackService {
-	private endpoint: string = environment.apiEndPoint;
 	private url: string = environment.urlServices;
+	private apiKey: string = environment.apiKey;
 
 	private http = inject(HttpClient);
 
@@ -25,7 +25,7 @@ export class BackService {
 		return new HttpHeaders({
 			['Content-Type']: 'application/json',
 			['Content-Encoding']: 'gzip, deflate, br',
-			['auth']: 'ABC123',
+			['auth']: this.apiKey,
 			['access-control-allow-headers']: '*',
 			['Authorization']: `Bearer ${(authJwt? authJwt : '')}`,
 
@@ -68,15 +68,6 @@ export class BackService {
 		let APISearch = `${this.url}/auth/login`;
 		return this.http.post<IUserCheck>(APISearch, JSON.stringify(logInbody), {
 			headers: this.getHeader(),
-			withCredentials: true
-		});
-	}
-
-	logOut(jwt: string): Observable<any> {
-		sessionStorage.setItem('jwt', jwt);
-		let APISearch = `${this.url}/auth/logout`;
-		return this.http.post<any>(APISearch, JSON.stringify({}),{
-			headers: this.getHeader(jwt),
 			withCredentials: true
 		});
 	}

@@ -1,4 +1,4 @@
-<h1 align="center">The Social Wires Backend</h1>
+<h1 align="center">The Social Wires Frontend</h1>
 
 <p align="center">
   <a href="https://angular.io/" target="blank"><img src="https://angular.io/assets/images/logos/angular/angular.svg" width="200" alt="Angular Logo" /></a>

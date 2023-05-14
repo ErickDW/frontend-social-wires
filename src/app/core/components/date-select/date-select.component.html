@@ -1,1 +1,15 @@
-<p>date-select works!</p>
+<div class="select-box" (click)="query()">
+	<div class="options-container" >
+		<div class="option index" (click)="selection('false')">
+			<label>Date select</label>
+		</div>
+
+		<div class="option" *ngFor="let day of days" (click)="selection(day)">
+			<label >{{day}}</label>
+		</div>
+	</div>
+
+	<div class="selected">
+		Date select
+	</div>
+</div>

@@ -1,0 +1,64 @@
+<div class="containerGn1">
+	<div class="containerGn2">
+		<div class="headLogin">
+			<div class="logo">
+				<img src="../../../assets/img/icons/logo.svg" alt="error" height="65">
+			</div>
+		</div>
+		<div class="bodyLogin">
+			<div class="containerTitle lg mbtl">
+				<h1>Welcome To Wires</h1>
+			</div>
+			<button class="dark rippleDark lg mbtl" routerLink="/signin">
+				Sign In
+			</button>
+			<form (submit)="onSubmit($event)">
+				<div class="containerTxbt lg mbt">
+					<p class="txColor1">Nickname</p>
+					<app-text-input
+						changetype="text"
+						placeholder="Nickname"
+						[search]="false"
+						(text$)="inputData($event)"
+						name="nickName"
+					></app-text-input>
+				</div>
+				<div class="containerTxbt lg mbt">
+					<p class="txColor1">Name</p>
+					<app-text-input
+						changetype="text"
+						placeholder="Full name"
+						[search]="false"
+						(text$)="inputData($event)"
+						name="userName"
+					></app-text-input>
+				</div>
+				<div class="containerTxbt lg mbt">
+					<p class="txColor1">Email Adress</p>
+					<app-text-input
+						changetype="email"
+						placeholder="Example@gmail.com"
+						[search]="false"
+						(text$)="inputData($event)"
+						name="email"
+					></app-text-input>
+				</div>
+				<div class="containerTxbt lg mbtl">
+					<p class="txColor1">Password</p>
+					<app-text-input
+						changetype="password"
+						placeholder="Password"
+						[search]="false"
+						(text$)="inputData($event)"
+						name="password"
+					></app-text-input>
+				</div>
+
+				<button class="default ripple lg mbtl">Create</button>
+			</form>
+		</div>
+		<div class="mbtl">
+			<app-footer></app-footer>
+		</div>
+	</div>
+</div>

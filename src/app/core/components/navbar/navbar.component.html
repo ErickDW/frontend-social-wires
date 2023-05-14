@@ -1,1 +1,66 @@
-<p>navbar works!</p>
+<div class="wrapper">
+	<div class="navbar">
+		<div class="navbar_left">
+			<div class="logo">
+				<img src="../../../../assets/img/icons/logo.svg" alt="error" height="40">
+			</div>
+		</div>
+
+		<div class="navbar_right">
+			<app-notify></app-notify>
+			<div class="profile">
+				<div class="icon_wrap">
+					<div class="icoT">
+						<svg role="img" title="icon1" class="op1">
+							<use href="#icon1" />
+						</svg>
+					</div>
+				</div>
+
+				<div class="profile_dd">
+					<ul class="profile_ul">
+						<li class="profile_li"><a class="profile profiletex"><span class="picon"><i></i>
+								</span>Daniel amadeus</a>
+						</li>
+						<li>
+							<a class="settings" routerLink="/message">
+								<span class="picon">
+									<img src="../../../../assets/img/icons/create.svg" alt="error" width="18"
+										height="18">
+								</span>
+								Create Messages
+							</a>
+						</li>
+						<li><a class="settings"  routerLink="/mymessages"><span class="picon">
+									<img src="../../../../assets/img/icons/send.svg" alt="error" width="18" height="18">
+								</span>My
+								Messages</a>
+						</li>
+						<li><a class="settings" routerLink="/allmessages"><span class="picon">
+									<img src="../../../../assets/img/icons/chatbubbles-sharp.svg" alt="error" width="18"
+										height="18">
+								</span>See all
+								Messages</a>
+						</li>
+						<li><a class="logout" (click)="logout()"><span class="picon">
+									<img src="../../../../assets/img/icons/log-in-sharp.svg" alt="error" width="18"
+										height="18">
+								</span>Logout</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
+	<symbol id="icon1" viewBox="0 0 24 24">
+		<g viewBox="0 0 24 24">
+			<path d="M3.9248 7.51782H19.6748M3.9248 12.3928H19.6748M3.9248 17.2678H19.6748" stroke-width="2"
+				stroke-miterlimit="10" stroke-linecap="round" />
+		</g>
+	</symbol>
+</svg>
+
+

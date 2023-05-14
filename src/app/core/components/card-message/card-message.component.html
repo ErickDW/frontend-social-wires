@@ -1,1 +1,14 @@
-<p>card-message works!</p>
+<div class="card">
+	<div class="containerBody">
+		<h3 class="titleCard">{{detal.title}}</h3>
+		<p class="textCard">{{detal.message}}</p>
+	</div>
+	<div class="footerCard">
+		<div class="contfecha">
+			<p class="fechaCard">{{dateFormat(detal.date)}}</p>
+		</div>
+		<div class="userCard">
+			<h3 class="userCard">{{detal.nick}}</h3>
+		</div>
+	</div>
+</div>

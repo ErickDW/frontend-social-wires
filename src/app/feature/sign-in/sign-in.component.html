@@ -1,1 +1,48 @@
-<p>sign-in works!</p>
+<div class="containerGn1">
+	<div class="containerGn2">
+		<div class="headLogin">
+			<div class="logo">
+				<img src="../../../assets/img/icons/logo.svg" alt="error" height="65">
+			</div>
+		</div>
+		<div class="bodyLogin">
+			<div class="containerTitle lg mbtl">
+				<h1>Welcome To Wires</h1>
+			</div>
+			<button class="dark rippleDark lg mbtl" routerLink="/signup">
+				Sign Up
+			</button>
+			<form  (submit)="onSubmit($event)">
+				<div class="containerTxbt lg mbt">
+					<p class="txColor1">Email Adress</p>
+					<app-text-input
+						changetype="email"
+						placeholder="Example@gmail.com"
+						[search]="false"
+						(text$)="inputData($event)"
+						name="email"
+					></app-text-input>
+				</div>
+				<div class="containerTxbt lg mbtl">
+					<p class="txColor1">Password</p>
+					<app-text-input
+						changetype="password"
+						placeholder="Password"
+						[search]="false"
+						(text$)="inputData($event)"
+						name="password"
+					></app-text-input>
+				</div>
+
+				<button class="default ripple lg mbtl">Sign In</button>
+			</form>
+			<div class="containerCheck lg mbt">
+				<input type="checkbox" class="myCheckbox">
+				<p class="txColor1">Remember Me</p>
+			</div>
+		</div>
+		<div class="mbtl">
+			<app-footer></app-footer>
+		</div>
+	</div>
+</div>

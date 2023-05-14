@@ -1,6 +1,7 @@
 export const environment = {
 	production: false,
 	apiEndPoint: '',
-	urlServices: '',
+	apiKey: 'ABC123',
+	urlServices: 'http://localhost:3000',
 	environment: 'development',
 };

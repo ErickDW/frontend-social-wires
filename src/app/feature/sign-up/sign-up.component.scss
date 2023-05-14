@@ -1,0 +1,69 @@
+@import 'src/~variables.scss';
+
+.containerGn1 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 153vh;
+}
+
+
+
+.containerGn2 {
+	min-width: 370px;
+	width: 450px;
+	/* background: aliceblue; */
+	border-radius: 15px;
+	border: solid;
+	border-color: chocolate;
+}
+
+.containerTitle {
+	h1 {
+		color: white;
+	}
+}
+
+.containerTxbt {
+	p {
+		margin-bottom: 8px;
+		font-size: 12px;
+	}
+}
+
+.containerCheck {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+
+	input[type="checkbox"] {
+		accent-color: $color1;
+	}
+
+	p {
+		font-size: 10px;
+		font-weight: bold;
+	}
+}
+
+.logo{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-image: url('../../../assets/img/image/image\ 2.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 330px;
+	img{
+		margin-top: 25px;
+	}
+}
+
+@media (max-width:400px) {
+	.containerGn1 {
+		height: 138vh;
+	}
+	.logo{
+		height: 270px;
+	}
+}

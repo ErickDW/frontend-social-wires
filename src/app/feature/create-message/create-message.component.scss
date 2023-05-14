@@ -1,0 +1,58 @@
+.mt {
+	margin-top: 35px;
+}
+
+.containerHead {
+	position: relative;
+	z-index: 5;
+}
+
+.containerBody {
+	position: relative;
+	z-index: 3;
+	h1{
+		text-align: center;
+	}
+}
+
+.containerButtonShare {
+	display: flex;
+	justify-content: center;
+}
+
+.containerMsg {
+	display: flex;
+	width: 660px;
+	margin: auto;
+	gap: 40px;
+}
+
+.containerCreateMsg {}
+
+.msg {
+	padding-top: 20px;
+}
+
+
+@media (max-width:755px) {
+	.containerBody{
+		h1{
+			text-align: inherit;
+		}
+	}
+
+	.containerButtonShare {
+		justify-content: flex-end;
+	}
+
+	.msg {
+		padding-top: inherit;
+	}
+
+	.containerMsg {
+		display: inherit;
+		width: inherit;
+		margin: inherit;
+		gap: inherit;
+	}
+}

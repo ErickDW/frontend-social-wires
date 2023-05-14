@@ -1,4 +1,4 @@
-<h1 align="center">The Social Wires Backend</h1>
+<h1 align="center">The Social Wires Frontend</h1>
 
 <p align="center">
   <a href="https://angular.io/" target="blank"><img src="https://angular.io/assets/images/logos/angular/angular.svg" width="200" alt="Angular Logo" /></a>
@@ -6,13 +6,16 @@
 
 
 
-# Frontend Socia lWires
+# Frontend Social Wires
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.14. update to 14.2.11
+
+- The project has a backend section made with the NestJS framework and you can see its repository here [Backend Social Wires](https://github.com/ErickDW/backend-social-wires)
+
+- This frontend project is deployed with Firebase in [Front host Social Wires](https://social-wires-ea72a.web.app) exposed for testing.
 ## Install dependencies
 
 Run `npm install` or `npm i`.
-
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

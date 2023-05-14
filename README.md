@@ -1,6 +1,17 @@
-# FrontendSocialWires
+<h1 align="center">The Social Wires Backend</h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.14.
+<p align="center">
+  <a href="https://angular.io/" target="blank"><img src="https://angular.io/assets/images/logos/angular/angular.svg" width="200" alt="Angular Logo" /></a>
+</p>
+
+
+
+# Frontend Socia lWires
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.14. update to 14.2.11
+## Install dependencies
+
+Run `npm install` or `npm i`.
 
 ## Development server
 
